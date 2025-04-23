@@ -1,0 +1,7 @@
+0 Anterior Canción
+1 Apagar
+2 Bajar volumen
+3 Encender
+4 Ruido de fondo
+5 Siguiente canción
+6 Subir volumen

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:padding="20dp">
+
+    <!-- Título de la canción (MAYOR jerarquía) -->
+    <TextView
+        android:id="@+id/tvSongTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre de la canción"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_above="@+id/centerGuide"
+        android:layout_marginBottom="30dp"
+        android:singleLine="true"
+        android:ellipsize="end"/>
+
+    <!-- Guía invisible para centrado -->
+    <View
+        android:id="@+id/centerGuide"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_centerInParent="true" />
+
+    <!-- Artista (jerarquía secundaria) -->
+    <TextView
+        android:id="@+id/tvArtist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Artista"
+        android:textColor="#BBBBBB"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_below="@id/centerGuide"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Controles de reproducción (TAMAÑOS PRECISOS) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/tvArtist"
+        android:layout_marginTop="40dp"
+        android:paddingHorizontal="20dp">
+
+        <!-- Botón anterior -->
+        <ImageButton
+            android:id="@+id/btnPrevious"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:src="@drawable/ic_skip_previous"
+            android:contentDescription="Anterior"
+            android:layout_marginEnd="30dp"
+            android:scaleType="centerInside"
+            app:tint="#FFFFFF" />
+
+        <!-- Botón play/pause (DESTACADO) -->
+        <ImageButton
+            android:id="@+id/btnPlayPause"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/ic_play"
+            android:contentDescription="Reproducir"
+            android:elevation="4dp"
+            android:scaleType="centerInside"
+            app:tint="#1DB954" />
+
+        <!-- Botón siguiente -->
+        <ImageButton
+            android:id="@+id/btnNext"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:src="@drawable/ic_skip_next"
+            android:contentDescription="Siguiente"
+            android:layout_marginStart="30dp"
+            android:scaleType="centerInside"
+            app:tint="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Botón de micrófono -->
+    <ImageButton
+        android:id="@+id/btnMic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/btnPlayPause"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ic_mic"
+        android:contentDescription="Escuchar comando"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        app:tint="#FFFFFF"/>
+
+    <!-- Comandos reconocidos (POSICIÓN FIJA) -->
+    <TextView
+        android:id="@+id/recognizedText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Comandos reconocidos aparecerán aquí"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="#252525"
+        android:layout_alignParentBottom="true"
+        android:padding="12dp"
+        android:maxLines="2"/>
+</RelativeLayout>
